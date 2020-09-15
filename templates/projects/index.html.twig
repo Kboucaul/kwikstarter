@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Accueil
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Nos projets actuels</h1>
+    <ul>
+        {% for project in projects %}
+            <li>{{project}}</li>
+        {% endfor %}
+    </ul>    
+    <h3>Nous avons actuellement {{ projects | length }} en cours</h3>
+    <p class="font-weight-bold">The current projects are <u>{{projects | join(', ', ' ,', ' and ') }}</u></p>
+</div>
+{% endblock %}
